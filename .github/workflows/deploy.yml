@@ -1,5 +1,10 @@
 on: [push]
-
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'project name>'
+        required: true
+        default: 'coba'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -11,4 +16,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages publish --project-name=coba
+          command: pages publish --project-name=${{ github.event.inputs.environment }} .
