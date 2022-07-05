@@ -1,3 +1,5 @@
 name = "coba"
 account_id = "ca381fffec9da382718bacf8e079a532"
-main = "."
+main = "./script.js"
+compatibility_date = "2022-07-05"
+
